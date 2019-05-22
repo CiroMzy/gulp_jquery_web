@@ -1,0 +1,25 @@
+
+
+<div id="titleBar">
+    <div class="container">
+        <div class="content"></div>
+        <div class="left"><img src="./img/icon-backpng.png" alt="" class="back-normal"><img src="./img/icon-backpngwhite.png" alt="" class="back-mine"></div>
+        <div class="title">商城</div>
+        <div class="right" style="display: none"><img src="./img/icon-share.png" alt=""></div>
+    </div>
+</div>
+
+<script>
+$(function () {
+    $('#titleBar .left').click(function () {
+        window.history.go(-1)
+    })
+    if (router.activePage && router.activePage.name ){
+        $('#titleBar .title').html(router.activePage.name)
+        if (router.activePage.share){
+            $('#titleBar .right').show()
+        }
+    }
+
+})
+</script>

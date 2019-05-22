@@ -1,0 +1,214 @@
+@charset "UTF-8";
+
+/*********************************************************
+公共变量
+ */
+@r:75rem;
+@commonPadding: 24/@r;
+.hlh(@h){
+  height: @h;
+  line-height: @h;
+}
+@colorRed:#FB4545;
+@colorGray:#999999;
+@colorGrayFd:#fdfdfd;
+@colorPink:#ff5f7b;
+@colorGrayBorder:#dddddd;
+@colorGrayBg:#f0f0f0;
+@colorGrayBgLighter:#f5f5f5;
+@colorGrayBgF6:#f6f6f6;
+@colorBlue:#329afa;
+@colorWhite:#fff;
+@colorFontSix:#666666;
+@colorFont:#333333;
+@colorOrange:#FF9100;
+
+
+
+
+
+
+@colorRedNew:#FB4545;
+@colorFont18:#181818;
+@colorBgGrayE5:#E5E5E5;
+@colorBgGrayD5:#D5D5D5;
+@colorBgGrayEd:#ededed;
+@colorBgGrayE9:#e9e9e9;
+@colorBgGrayA6:#a6a6a6;
+@colorBorderE0:#e0e0e0;
+@colorBorderE9:#EDEDED;
+
+
+@colorMainBg:#f8f8f8;
+@colorYellow:#FF9100;
+
+
+
+.btnBg{
+  background-color: #FFB112;
+  background: linear-gradient(to right, #FFB112 0%,#FF9100 100%);
+  background:-webkit-gradient(linear, 0 0, 0 right, from(#FFB112), to(#FF9100));
+}
+
+
+
+.afcl{
+  &:after{
+    display: block;
+    content: '';
+    clear: both;
+    visibility: hidden;
+  }
+}
+.overWarp(@num){
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @num;
+  overflow: hidden;
+}
+
+
+.clearfix:after {content: "."; display: block; height:0; clear:both; visibility: hidden;}
+.clearfix { *zoom:1; }/*公共类*/
+input {outline:none;}
+
+//flex布局
+.flex{
+  display:flex;
+}
+.flex-vc{
+  align-items:center;
+}
+.flex-jc{
+  justify-content: center;
+}
+.flex-jc-lr{
+  justify-content: space-between;
+}
+.layui-m-layerchild{
+  box-shadow: none !important;
+}
+.layer-form-bangding{
+  .form-item{
+    display: flex;
+    height: 70/@r;
+    line-height: 70/@r;
+    margin-bottom: @commonPadding;
+    position: relative;
+    justify-content: space-between;
+    span{
+      width: 150/@r;
+    }
+    input{
+      flex: 1;
+      font-size: 28/@r;
+      padding: 0 20/@r;
+      color: #999999;
+      border: 1px solid #BFBFBF;
+      border-radius: 6/@r;
+      &::-webkit-input-placeholder {
+        color: #999999;
+      }
+    }
+    .faSong{
+      box-sizing: border-box;
+      background: #FF9100;
+      border: none;
+      padding: 2/@r 5/@r;
+      color: #fff;
+      border-radius: 5/@r;
+      height: 70/@r;
+      line-height: 70/@r;
+      outline: none;
+      font-size: 24/@r;
+      width: 152/@r;
+      &.disable{
+        background: #ccc;
+      }
+    }
+  }
+  .form-item-code{
+    margin-bottom: 0;
+    input{
+      width: 308/@r;
+      box-sizing: border-box;
+      flex: none;
+    }
+  }
+  .form-item-top{
+    margin-top: -15/@r;
+  }
+}
+
+/*********************************************************
+                    首页  开始
+ ***********************************************************/
+
+// 底部菜单栏
+#menu{
+  position: relative;
+  padding-bottom: 98/@r;
+  .container{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 98/@r;
+    display: flex;
+    justify-content:space-between;
+    background: #fff;
+    z-index: 10;
+    box-shadow: 0 -1/@r 6/@r 0 rgba(0,0,0,.06);
+    .nav-item{
+      flex: 1;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15/@r 0 5/@r;
+      color: @colorFontSix;
+      i{
+        font-size: 40/@r;
+        width: 44/@r;
+        height: 44/@r;
+        display: block;
+        background: url("../img/btmIcon/index-icon-normal.png") center center no-repeat;
+        background-size: cover;
+      }
+      .icon-ziyuan {
+        background-image: url("../img/btmIcon/index-icon-normal.png")
+      }
+      .icon-shangpinfenlei {
+        background-image: url("../img/btmIcon/sort-icon-normal.png")
+      }
+      .icon-daohanggouwuche {
+        background-image: url("../img/btmIcon/shoppingCart-icon-normal.png")
+      }
+      .icon-icon_pc {
+        background-image: url("../img/btmIcon/mine-icon-normal.png")
+      }
+      span{
+        font-size: 22/@r;
+        line-height: 32/@r;
+        display: block;
+      }
+      &.active{
+        color:#FF9100;
+        .icon-ziyuan {
+          background-image: url("../img/btmIcon/index-icon-active.png")
+        }
+        .icon-shangpinfenlei {
+          background-image: url("../img/btmIcon/sort-icon-active.png")
+        }
+        .icon-daohanggouwuche {
+          background-image: url("../img/btmIcon/shoppingCart-icon-active.png")
+        }
+        .icon-icon_pc {
+          background-image: url("../img/btmIcon/mine-icon-active.png")
+        }
+      }
+    }
+  }
+}

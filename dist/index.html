@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商城</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no, shrink-to-fit=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<script src="//cdn.bootcss.com/eruda/1.5.2/eruda.min.js"></script>
+<script>eruda.init();</script>
+
+
+<link rel="stylesheet" href="./libs/fonts/iconfont.css">
+<link rel="stylesheet" href="./libs/swiper/dist/css/swiper.css">
+<link rel="stylesheet" href="./libs/animate/animate.min.css">
+<link rel="stylesheet" href="./libs/minirefresh/minirefresh.css">
+<link rel="stylesheet" href="./libs/css/reset.css">
+<link rel="stylesheet" href="./css/main.css?v=5341e9e6b4">
+
+<link rel="stylesheet" href="./libs/jquery-ui/jquery-ui.css">
+
+
+<script src="./libs/reset/reset.js"></script>
+<script src="./libs/utils/utils.js"></script>
+<script src="./js/uri.js?v=08d1c82f88"></script>
+<script src="./libs/jquery/jquery.min.js"></script>
+
+<script src="./libs/jquery-ui/jquery-ui.js"></script>
+<script src="./libs/swiper/dist/js/swiper.js"></script>
+<script src="./libs/swiper/swiper.animate1.0.2.min.js"></script>
+<script src="./libs/layer/mobile/layer.js"></script>
+<script src="./libs/minirefresh/minirefresh.js"></script>
+<script src="./js/common-settings.js?v=6404767e5f"></script>
+<script src="./js/createDom.js?v=8485d2f910"></script>
+<script src="./js/main.js?v=04ffb2d2d7"></script>
+
+
+
+
+
+
+</head>
+<body class="page-home-weixin">
+
+
+<!-- banner -->
+<div class="swiper-container" id="banner">
+    <div class="swiper-wrapper">
+
+
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+</div>
+
+
+
+
+<!--顶部logo以及导航开始-->
+<div id="menu">
+    <div class="container">
+        <a onclick="toLink('index.html')" class="nav-item nav-index"><i class="iconfont icon-ziyuan"></i><span>首页</span></a>
+        <a onclick="toLink('goodsList.html')"  class="nav-item nav-car"><i class="iconfont icon-shangpinfenlei"></i><span>商品分类</span></a>
+        <a onclick="toLink('shoppingCart.html')" class="nav-item nav-car"><i class="iconfont icon-daohanggouwuche"></i><span>购物车</span></a>
+        <a onclick="toLink('mine.html')" class="nav-item nav-mine"><i class="iconfont icon-icon_pc"></i><span>个人中心</span></a>
+    </div>
+</div>
+
+<script>
+
+    function toLink(link){
+        if(link==='goodsList.html'){
+            setLocalStorage({sortId: ""})
+        }
+        window.location.href = link
+    }
+
+</script>
+
+
+
+
+
+
+<script src="./js/weChat.js?v=d3feec80b9"></script>
+<script src="./js/index.js?v=dd7ef850c9"></script>
+
+
+</body>
+</html>

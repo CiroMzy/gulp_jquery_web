@@ -1,0 +1,26 @@
+
+
+<!--顶部logo以及导航开始-->
+<div id="menu">
+    <div class="container">
+        <a onclick="toLink('index.html')" class="nav-item nav-index"><i class="iconfont icon-ziyuan"></i><span>首页</span></a>
+        <a onclick="toLink('goodsList.html')"  class="nav-item nav-car"><i class="iconfont icon-shangpinfenlei"></i><span>商品分类</span></a>
+        <a onclick="toLink('shoppingCart.html')" class="nav-item nav-car"><i class="iconfont icon-daohanggouwuche"></i><span>购物车</span></a>
+        <a onclick="toLink('mine.html')" class="nav-item nav-mine"><i class="iconfont icon-icon_pc"></i><span>个人中心</span></a>
+    </div>
+</div>
+
+<script>
+
+    function toLink(link){
+        if(link==='goodsList.html'){
+            setLocalStorage({sortId: ""})
+        }
+        window.location.href = link
+    }
+
+</script>
+
+
+
+
