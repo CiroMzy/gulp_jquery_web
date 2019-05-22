@@ -3,9 +3,9 @@
 <div id="titleBar">
     <div class="container">
         <div class="content"></div>
-        <div class="left"><img src="./img/icon-backpng.png" alt="" class="back-normal"><img src="./img/icon-backpngwhite.png" alt="" class="back-mine"></div>
-        <div class="title">商城</div>
-        <div class="right" style="display: none"><img src="./img/icon-share.png" alt=""></div>
+        <div class="left"><<<</div>
+        <div class="title"></div>
+        <div class="right" style="display: none">分享图标</div>
     </div>
 </div>
 
@@ -16,6 +16,7 @@ $(function () {
     })
     if (router.activePage && router.activePage.name ){
         $('#titleBar .title').html(router.activePage.name)
+        document.title = router.activePage.name
         if (router.activePage.share){
             $('#titleBar .right').show()
         }

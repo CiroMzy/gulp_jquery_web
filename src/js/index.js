@@ -5,6 +5,7 @@
 $(function () {
 
     // 初始化banner轮播
+    /*
     Fecth(URI.indexBanner, {slideshow_category: '0'}).then(res => {
 
         $('#banner .swiper-wrapper ').html(new createDom().indexBanner(res.list))
@@ -23,5 +24,6 @@ $(function () {
         });
         //
     })
+    */
 
 })

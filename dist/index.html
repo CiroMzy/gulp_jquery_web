@@ -32,14 +32,41 @@
 <script src="./libs/swiper/swiper.animate1.0.2.min.js"></script>
 <script src="./libs/layer/mobile/layer.js"></script>
 <script src="./libs/minirefresh/minirefresh.js"></script>
-<script src="./js/common-settings.js?v=6404767e5f"></script>
+<script src="./js/common-settings.js?v=90ed65c493"></script>
 <script src="./js/createDom.js?v=8485d2f910"></script>
-<script src="./js/main.js?v=04ffb2d2d7"></script>
+<script src="./js/main.js?v=4436d82c7d"></script>
 
 
 
 
 
+
+    
+
+<div id="titleBar">
+    <div class="container">
+        <div class="content"></div>
+        <div class="left"><<<</div>
+        <div class="title"></div>
+        <div class="right" style="display: none">分享图标</div>
+    </div>
+</div>
+
+<script>
+$(function () {
+    $('#titleBar .left').click(function () {
+        window.history.go(-1)
+    })
+    if (router.activePage && router.activePage.name ){
+        $('#titleBar .title').html(router.activePage.name)
+        document.title = router.activePage.name
+        if (router.activePage.share){
+            $('#titleBar .right').show()
+        }
+    }
+
+})
+</script>
 
 </head>
 <body class="page-home-weixin">
@@ -54,7 +81,7 @@
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
 </div>
-
+首页
 
 
 
@@ -84,8 +111,7 @@
 
 
 
-<script src="./js/weChat.js?v=d3feec80b9"></script>
-<script src="./js/index.js?v=dd7ef850c9"></script>
+<script src="./js/index.js?v=4032a440ff"></script>
 
 
 </body>

@@ -1,9 +1,4 @@
 
-let _openid = getLocalStorage('openid')
-
-if (!_openid){
-    wx_login_handler()
-}
 getInitData()
 
 
@@ -11,30 +6,8 @@ getInitData()
 function getInitData() {
     let hasSettings = getSessionStorage('weixinshangcheng')
     if (!hasSettings || (typeof hasSettings !== 'object')) {
-        let obj = {
-            activity: globalVar.isActivity,
-            activity_id: globalVar.activityId
-        }
-        $.ajax({
-            type: "POST",
-            url: URI.globalSettings,
-            headers:{
-                token: (getSessionStorage('userInfo') && getSessionStorage('userInfo').token) ? getSessionStorage('userInfo').token : ''
-            },
-            async: false,
-            data: obj,
-            success (data) {
-                if (data.code === 0){
-                    setSessionStorage({weixinshangcheng: data.data})
-                    resetGlobalVar()
-                } else {
-                    alert('获取配置失败')
-                }
-            },
-            error () {
-                alert('获取配置失败')
-            }
-        });
+        // 请求配置数据
+
     } else {
         resetGlobalVar()
     }
@@ -118,51 +91,3 @@ function mainPayHandler(type, id) {
 
 }
 
-function wx_login_handler() {
-
-    //登陆微信
-    if (!getLocalStorage('openid')) {
-        let code = getQueryString('code')
-        if (!code) {
-            weChat.method.auth(window.location.href);
-            return
-        }
-
-        // 获取信息
-        Fecth(URI.getOpenId, {code: code}).then(res => {
-            console.log(res)
-
-            setLocalStorage({openid: res.openId, WX_NAME: res.nickname, PHOTO_URL: res.headimgurl})
-
-
-            let data = {
-                openID: res.openId,
-                WX_NAME: res.nickname,
-                PHOTO_URL: res.headimgurl,
-            }
-            Fecth(URI.LoginWeChat, data).then(res => {
-                console.log(res)
-                setSessionStorage({token: res.token, USER_ID: res.USER_ID, PHONE: res.PHONE})
-            })
-
-        })
-
-    } else {
-
-        // 登陆
-        let openid = getLocalStorage('openid')
-        let WX_NAME = getLocalStorage('WX_NAME')
-        let PHOTO_URL = getLocalStorage('PHOTO_URL')
-
-        let data = {
-            openID: openid,
-            WX_NAME: WX_NAME,
-            PHOTO_URL: PHOTO_URL,
-        }
-        Fecth(URI.LoginWeChat, data).then(res => {
-            console.log(res)
-            setSessionStorage({token: res.token, USER_ID: res.USER_ID, PHONE: res.PHONE})
-        })
-
-    }
-}

@@ -34,18 +34,24 @@ let router = {
         page: 'index.html',
         name: '商城',
         index: '0',
-        share: true,
-        toElife: true
     },
-    sortList: {
-        page: 'sortList.html',
+    goodsList: {
+        page: 'goodsList.html',
         name: '商品分类',
-        index: '0',
-        share: true,
-        toElife: true
+        index: '1',
+    },
+    mine: {
+        page: 'mine.html',
+        name: '个人中心',
+        index: '1',
+    },
+    shoppingCart: {
+        page: 'shoppingCart.html',
+        name: '购物车',
+        index: '1',
     }
 }
-
+setActivePage()
 
 // 类型滤镜
 let filters = {
@@ -235,3 +241,15 @@ function Fecth(url, data={}, params) {
     })
 }
 
+// 设置当前匹配的路由页面
+function setActivePage() {
+    for (let key in router){
+        let localHref = window.location.href
+        if (localHref.indexOf(router[key].page) > -1){
+            router.activePage = router[key]
+        }
+        if (localHref.charAt(localHref.length-1 ) === '/'){
+            router.activePage = router['index']
+        }
+    }
+}
