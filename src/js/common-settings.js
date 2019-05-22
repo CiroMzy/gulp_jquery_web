@@ -32,7 +32,7 @@ let router = {
     },
     index: {
         page: 'index.html',
-        name: '中澜商城',
+        name: '商城',
         index: '0',
         share: true,
         toElife: true
