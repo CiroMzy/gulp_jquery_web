@@ -41,4 +41,5 @@ node_modules--->gulp-rev--->index.js
 node_modules--->gulp-rev-collector--->index.js
 将 let cleanReplacement = path.basename(json[key]).replace(new RegExp( opts.revSuffix ), '' );
 改为 let cleanReplacement =  path.basename(json[key]).split('?')[0];
+
 ```
